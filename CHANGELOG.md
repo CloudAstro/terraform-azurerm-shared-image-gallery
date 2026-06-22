@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/CloudAstro/terraform-azurerm-shared-image-gallery/compare/v1.0.0...v1.1.0) (2026-06-22)
+
+
+### Features
+
+* update tf and provider version ([6e5f0cd](https://github.com/CloudAstro/terraform-azurerm-shared-image-gallery/commit/6e5f0cd4a0b30391039125fa04dffed64f574fd3))
+
 ## 1.0.0 (2025-04-30)
 
 
