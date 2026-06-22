@@ -1,15 +1,19 @@
 resource "azurerm_resource_group" "gallery_rg" {
-  location = "rg-vnet-example"
-  name     = "germanywestcentral"
+  name     = "rg-image-gallery-example"
+  location = "germanywestcentral"
 }
 
 module "shared_image_gallery" {
-  source              = "../tf-modules/tf-azurerm-shared-image-gallery"
-  name                = "image-gallery-name"
+  source              = "../.."
+  name                = "imageGalleryName"
+  location            = azurerm_resource_group.gallery_rg.location
   resource_group_name = azurerm_resource_group.gallery_rg.name
-  location            = "germanywestcentral"
-  tags                = "tags"
   description         = "Storage of hardenened base images"
+  
+  tags = {
+    environment = "test"
+  }
+  
 
   shared_images_definitions = {
     redhat = {
